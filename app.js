@@ -13,13 +13,6 @@ const connectDatabase = require('./src/infrastructure/mongooseDb');
 
 app.use(express.json());
 
-(async () => {
-  await connectDatabase.connectDatabase();
-
-  server.listen(process.env.PORT, () => {
-    console.log(`Server running on http://localhost:${process.env.PORT}`);
-  });
-})();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "frontend"));
@@ -146,3 +139,11 @@ app.use("/tDMEmployees", tDMEmployeesRoutes);
 app.use("/tDProductionLine", tDProductionLineRoutes);
 app.use("/tDProductoFamilia", tDProductoFamiliaRoutes);
 app.use("/tDSimulationFinancialLog", tDSimulationFinancialLogRoutes);
+
+(async () => {
+  await connectDatabase.connectDatabase();
+
+  server.listen(process.env.PORT, () => {
+    console.log(`Server running on http://localhost:${process.env.PORT}`);
+  });
+})();
