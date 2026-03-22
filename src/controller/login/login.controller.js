@@ -8,7 +8,7 @@ function login(req, res) {
   }
 
   // TODO: initialize run with user information -> team, budget, etc
-  res.status(200).json({ run: 1 });
+  return res.status(200).json({role: user, room: Math.floor(100000 + Math.random() * 900000)})
 }
 
 module.exports = { login };
