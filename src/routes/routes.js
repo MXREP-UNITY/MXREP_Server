@@ -9,6 +9,6 @@ routes.get("/", (req, res) => {
   res.status(200);
 });
 routes.post("/login", loginRoutes);
-routes.post("/sendEmail", sendEmailRoutes);
+routes.use("/send-email", sendEmailRoutes);
 
 module.exports = routes;
