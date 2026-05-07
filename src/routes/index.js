@@ -58,6 +58,7 @@ const tDMEmployeesRoutes = require("./tDMEmployees.routes");
 const tDProductionLineRoutes = require("./tDProductionLine.routes");
 const tDProductoFamiliaRoutes = require("./tDProductoFamilia.routes");
 const tDSimulationFinancialLogRoutes = require("./tDSimulationFinancialLog.routes");
+const excelRoutes = require("./excel.routes")
 
 router.use("/permisos", permisosRoutes);
 router.use("/usuarios-sistema", usuariosSistemaRoutes);
@@ -116,5 +117,6 @@ router.use("/tdm-employees", tDMEmployeesRoutes);
 router.use("/td-production-line", tDProductionLineRoutes);
 router.use("/td-producto-familia", tDProductoFamiliaRoutes);
 router.use("/td-simulation-financial-log", tDSimulationFinancialLogRoutes);
+router.use("/save-excel",excelRoutes);
 
 module.exports = router;
