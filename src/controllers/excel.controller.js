@@ -1,8 +1,12 @@
+const generateExcel = require("../usecases/generateExcel.usecase")
 
 exports.getExcel = async (req, res) => {
     try {
-        console.log("Helloo");
+        const xlsBuffer = await generateExcel();
+        res.set("Content-Disposition", "attachment; filename=template_financiero.xls");
+        res.type("application/nnd.ms-excel");
+        res.send(xlsBuffer);
     } catch (e) {
-        res.status(500).json({error: e.message})
+        res.status(500).json({error: e.message});
     }
 }
