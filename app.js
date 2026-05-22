@@ -81,6 +81,7 @@ const tDMEmployeesRoutes = require("./src/routes/tDMEmployees.routes");
 const tDProductionLineRoutes = require("./src/routes/tDProductionLine.routes");
 const tDProductoFamiliaRoutes = require("./src/routes/tDProductoFamilia.routes");
 const tDSimulationFinancialLogRoutes = require("./src/routes/tDSimulationFinancialLog.routes");
+const xlsRoutes = require("./src/routes/xls.routes")
 
 app.use("/permisos", permisosRoutes);
 app.use("/usuariosSistema", usuariosSistemaRoutes);
@@ -139,6 +140,7 @@ app.use("/tDMEmployees", tDMEmployeesRoutes);
 app.use("/tDProductionLine", tDProductionLineRoutes);
 app.use("/tDProductoFamilia", tDProductoFamiliaRoutes);
 app.use("/tDSimulationFinancialLog", tDSimulationFinancialLogRoutes);
+app.use("/xls", xlsRoutes);
 
 (async () => {
   await connectDatabase.connectDatabase();

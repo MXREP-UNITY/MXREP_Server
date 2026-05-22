@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/excel.controller")
+const controller = require("../controllers/xls.controller")
 
-router.get("/",)
+router.get("/")
 
 module.exports = router;

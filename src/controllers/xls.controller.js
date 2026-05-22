@@ -1,4 +1,4 @@
-const generateExcel = require("../usecases/generateExcel.usecase")
+const generateExcel = require("../usecases/generateXls.usecase")
 
 exports.getExcel = async (req, res) => {
     try {
