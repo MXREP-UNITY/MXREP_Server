@@ -1,8 +1,8 @@
-const generateExcel = require("../usecases/generateXls.usecase")
+const generateXLS = require("../usecases/generateXLS.usecase")
 
-exports.getExcel = async (req, res) => {
+exports.getXLS = async (req, res) => {
     try {
-        const xlsBuffer = await generateExcel();
+        const xlsBuffer = await generateXLS();
         res.set("Content-Disposition", "attachment; filename=template_financiero.xls");
         res.type("application/nnd.ms-excel");
         res.send(xlsBuffer);
